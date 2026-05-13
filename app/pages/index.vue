@@ -1,5 +1,7 @@
 <script setup>
-
+definePageMeta({
+    layout: 'app'
+})
 const route = useRoute()
 
 </script>
