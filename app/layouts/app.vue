@@ -3,9 +3,6 @@ useHead({
   htmlAttrs: {
     lang: 'id' 
   },
-  bodyAttrs: {
-    class: 'bg-gray-900 text-white antialiased'
-  },
   titleTemplate: '%s - Porto',
   link: [
     // Preconnect untuk Google Fonts
@@ -35,6 +32,10 @@ useSeoMeta({
   twitterDescription: 'Portofolio dan blog pribadi Andi Marcell, seorang Junior Frontend Engineer dari Balikpapan.',
   twitterImage: 'https://domainku.com/preview.png' // Samakan dengan ogImage
 })
+
+const colorMode = useColorMode()
+
+console.log(colorMode.preference)
 </script>
 
 <template>
