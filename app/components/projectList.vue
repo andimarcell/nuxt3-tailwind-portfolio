@@ -1,9 +1,16 @@
 <script setup>
-const {
-  error,
-  pending,
-  data: repos,
-} = await useFetch("https://api.github.com/users/andimarcell/repos");
+const { error, pending, data } = await useFetch(
+  "https://api.github.com/users/andimarcell/repos",
+  {
+    lazy: true,
+  },
+);
+
+const repos = computed(() => {
+  return data.value
+    .filter((repo) => repo.description)
+    .sort((a, b) => b.stargazers_count - a.stargazers_count);
+});
 </script>
 
 <template>
@@ -18,13 +25,15 @@ const {
           :key="index"
           class="border border-gray-200 rounded-md p-4 font-mono hover:bg-gray-700 cursor-pointer"
         >
-          <div class="flex items-center justify-between text-sm">
-            <div class="font-semibold">{{ repo.name }}</div>
-            <div>{{ repo.stargazers_count }} ★</div>
-          </div>
-          <p class="text-sm mt-5">
-            {{ repo.description }}
-          </p>
+          <a :href="repo.html_url" target="blank">
+            <div class="flex items-center justify-between text-sm">
+              <div class="font-semibold">{{ repo.name }}</div>
+              <div>{{ repo.stargazers_count }} ★</div>
+            </div>
+            <p class="text-sm mt-5">
+              {{ repo.description }}
+            </p>
+          </a>
         </li>
       </ul>
     </section>

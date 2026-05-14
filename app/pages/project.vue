@@ -13,6 +13,6 @@ useHead({
 </script>
 
 <template>
-  <h1>Project</h1>
+  <h1 class="text-2xl font-bold mb-10">Project</h1>
   <ProjectList />
 </template>
