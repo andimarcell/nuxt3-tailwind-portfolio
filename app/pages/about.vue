@@ -5,7 +5,7 @@ definePageMeta({
 
 useHead({
     title: 'About',
-})
+});
 </script>
 
 <template>

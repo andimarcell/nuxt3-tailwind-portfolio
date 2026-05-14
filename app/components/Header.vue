@@ -1,12 +1,13 @@
 <template>
-  <header class="flex justify-between items-center">
+  <header class="flex justify-between items-center border-gray-700 border-b mt-5">
     <div>
       <NuxtLink to="/" class="text-xl font-semibold link">Porto</NuxtLink>
     </div>
-    <nav class="font-mono">
+    <nav class="font-mono ">
       <ul class="flex space-x-4">
         <li><NuxtLink to="/" class="link">Home</NuxtLink></li>
         <li><NuxtLink to="/about" class="link">About</NuxtLink></li>
+        <li><NuxtLink to="/project" class="link">Project</NuxtLink></li>
         <li><NuxtLink to="/blog" class="link">Blog</NuxtLink></li>
       </ul>
     </nav>
@@ -17,6 +18,6 @@
 @reference "tailwindcss";
 
 .link {
-  @apply p-2 hover:bg-gray-200;
+  @apply p-2 hover:bg-gray-800;
 }
 </style>

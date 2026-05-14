@@ -3,6 +3,9 @@ useHead({
   htmlAttrs: {
     lang: 'id' 
   },
+  bodyAttrs: {
+    class: 'bg-gray-900 text-white antialiased'
+  },
   titleTemplate: '%s - Porto',
   link: [
     // Preconnect untuk Google Fonts
@@ -35,9 +38,9 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto ">
     <Header />
-    <main class="p-2">
+    <main class="p-2 mt-10">
       <slot />
     </main>
   </div>
