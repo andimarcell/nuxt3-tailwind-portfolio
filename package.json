@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^3.13.0",
     "@nuxtjs/color-mode": "^4.0.0",
     "@tailwindcss/vite": "^4.3.0",
+    "better-sqlite3": "^12.10.0",
     "nuxt": "^4.4.4",
     "tailwindcss": "^4.3.0",
     "vue": "^3.5.33",
