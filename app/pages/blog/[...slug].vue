@@ -18,7 +18,7 @@ const { data: page } = await useAsyncData(route.path, () => {
 </script>
 
 <template>
-    <article>
+    <article class="prose dark:prose-invert max-w-none">
         <ContentRenderer v-if="page" :value="page" />
         <div v-else class="text-center mt-10">
             <h1 class="text-2xl font-bold">404 - Tulisan tidak ditemukan</h1>
