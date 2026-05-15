@@ -25,7 +25,7 @@ const repos = computed(() => {
           :key="index"
           class="border border-gray-200 rounded-md p-4 font-mono hover:bg-gray-700 cursor-pointer"
         >
-          <a :href="repo.html_url" target="blank">
+          <a :href="repo.html_url" target="_blank">
             <div class="flex items-center justify-between text-sm">
               <div class="font-semibold">{{ repo.name }}</div>
               <div>{{ repo.stargazers_count }} ★</div>

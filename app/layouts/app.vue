@@ -31,11 +31,11 @@ useSeoMeta({
   twitterTitle: 'Porto - Andi Marcell',
   twitterDescription: 'Portofolio dan blog pribadi Andi Marcell, seorang Junior Frontend Engineer dari Balikpapan.',
   twitterImage: 'https://domainku.com/preview.png' // Samakan dengan ogImage
-})
+});
 
-const colorMode = useColorMode()
+// const colorMode = useColorMode()
 
-console.log(colorMode.preference)
+// console.log(colorMode.preference)
 </script>
 
 <template>

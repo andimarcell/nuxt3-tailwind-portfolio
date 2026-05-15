@@ -5,8 +5,8 @@ useHead({
 </script>
 
 <template>
-  <div class="container">
-    <div class="col-left">
+  <div class="grid grid-cols-4 h-screen">
+    <div class="col-span-1 bg-blue-200 p-5">
       <nav>
         <ul>
           <li><NuxtLink to="/">Home</NuxtLink></li>
@@ -15,12 +15,12 @@ useHead({
         </ul>
       </nav>
     </div>
-    <div class="col-right">
+    <div class="col-span-3 bg-green-200 p-5">
       <slot />
     </div>
   </div>
 </template>
-
+<!-- 
 <style scoped>
 .container {
 	display: grid;
@@ -37,4 +37,4 @@ useHead({
 	background-color: lightgreen;
 	padding: 20px;
 }
-</style>
+</style> -->
