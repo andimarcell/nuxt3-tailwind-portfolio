@@ -1,8 +1,4 @@
 <script setup>
-definePageMeta({
-  layout: "app",
-});
-
 useHead({
   title: "Blog",
 });

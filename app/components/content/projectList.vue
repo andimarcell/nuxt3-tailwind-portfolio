@@ -14,8 +14,7 @@ const repos = computed(() => {
 </script>
 
 <template>
-  <div>
-    <p class="mb-10">This is a list of projects</p>
+  <section class="not-prose">
     <section v-if="pending">Loading</section>
     <section v-else-if="error">Something went wrong</section>
     <section v-else>
@@ -37,5 +36,5 @@ const repos = computed(() => {
         </li>
       </ul>
     </section>
-  </div>
+  </section>
 </template>
