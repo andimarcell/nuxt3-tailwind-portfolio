@@ -1,11 +1,16 @@
 <script setup>
 definePageMeta({
-    layout: 'blog'
+    layout: 'app'
 });
 
 useHead({
     title: 'Blog',
-})
+});
+
+const {data: posts } = await useAsyncData('blog-list', () => {
+    return queryCollection('blog').all();
+});
+console.log(posts.value);
 </script>
 
 <template>
