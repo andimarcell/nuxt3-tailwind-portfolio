@@ -8,12 +8,18 @@ useHead({
 });
 
 const {data: posts } = await useAsyncData('blog-list', () => {
-    return queryCollection('blog').all();
+    return queryCollection('blog').select('path','title').all();
 });
-console.log(posts.value);
+
 </script>
 
 <template>
-    <h1>Blog</h1>
-    <p>Blog page</p>
+    <section class="prose dark:prose-invert">
+        <h1 class="text-2xl font-bold mb-10">Blog</h1>
+        <ul>
+            <li v-for="(post, index) in posts" :key="post.path">
+                <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
+            </li>
+        </ul>
+    </section>
 </template>

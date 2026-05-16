@@ -21,7 +21,7 @@ toc: true
 
 # Apa itu Vue.js?
 
-![Vue 3](/images/vuejs.png)
+![Vue 3](/image/vuejs.png)
 
 Vue.js adalah sebuah framework JavaScript yang digunakan untuk membangun antarmuka pengguna yang interaktif. Dibuat oleh Evan You, Vue.js fokus pada tampilan yang terdeklarasi secara reaktif dan komponen-komponen yang dapat digunakan kembali.
 
