@@ -37,7 +37,7 @@ useSeoMeta({
         </p>
       </div>
 
-      <!-- TABEL VISUALISASI FRONTMATTER (Sesuai Gambar Course) -->
+      <!-- TABEL VISUALISASI FRONTMATTER  -->
       <!-- Menggunakan class 'not-prose' agar tidak bentrok dengan Tailwind Typography -->
       <section
         v-if="page.head"
