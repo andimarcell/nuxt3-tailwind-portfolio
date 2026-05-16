@@ -10,7 +10,6 @@ head:
     - name: 'og:description'
       content: 'This is an example of a markdown document with various formatting elements.'
 publishedAt: 2022-02-02 20:14:00
-toc: false
 ---
 
 # Markdown Example

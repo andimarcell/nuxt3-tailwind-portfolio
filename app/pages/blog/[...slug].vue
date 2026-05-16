@@ -172,8 +172,11 @@ useSeoMeta({
           </table>
         </section>
 
+        <pre class="text-xs bg-gray-800 text-green-400 p-4 rounded">{{ page.body.toc.links }}</pre>
         <!-- ISI KONTEN BLOG (Markdown) -->
         <ContentRenderer :value="page" />
+
+        
       </template>
 
       <!-- ERROR STATE -->
