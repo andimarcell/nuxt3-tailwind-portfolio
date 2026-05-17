@@ -7,6 +7,29 @@ useHead({
   title: "Blog",
 });
 
+const activeId = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        activeId.value = entry.target.id;
+      }
+    }
+  }, { threshold: 0.5 });
+    setTimeout(() => {
+    document.querySelectorAll('h2, h3').forEach(el => observer.observe(el));
+  }, 500);
+
+  // Cari semua h2 dan h3 di dalam artikel
+  const elements = document.querySelectorAll('h2, h3');
+  elements.forEach((el) => observer.observe(el));
+
+  onBeforeUnmount(() => {
+    elements.forEach((el) => observer.unobserve(el));
+  });
+});
+
 const route = useRoute();
 // console.log(route);
 
@@ -77,35 +100,35 @@ useSeoMeta({
         </div>
 
         <!-- 💡 MASTER TABLE METADATA (Untuk Debugging/Portofolio) -->
-        <section
+        <!-- <section
           class="mb-12 overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm not-prose"
         >
           <table
             class="w-full text-sm text-left text-gray-700 dark:text-gray-300"
           >
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-800"> -->
               <!-- Baris Title -->
-              <tr>
+              <!-- <tr>
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 w-32 border-r border-gray-200 dark:border-gray-800"
                 >
                   title
                 </th>
                 <td class="px-6 py-4">{{ page.title }}</td>
-              </tr>
+              </tr> -->
 
               <!-- Baris Description -->
-              <tr>
+              <!-- <tr>
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
                   description
                 </th>
                 <td class="px-6 py-4">{{ page.description }}</td>
-              </tr>
+              </tr> -->
 
               <!-- Baris Head (Nested Table) -->
-              <tr v-if="page.head && page.head.meta">
+              <!-- <tr v-if="page.head && page.head.meta">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 align-top border-r border-gray-200 dark:border-gray-800"
                 >
@@ -147,20 +170,20 @@ useSeoMeta({
                     </tbody>
                   </table>
                 </td>
-              </tr>
+              </tr> -->
 
               <!-- Baris PublishedAt (Format Raw) -->
-              <tr v-if="page.publishedAt">
+              <!-- <tr v-if="page.publishedAt">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
                   publishedAt
                 </th>
                 <td class="px-6 py-4">{{ page.publishedAt }}</td>
-              </tr>
+              </tr> -->
 
               <!-- Baris TOC -->
-              <tr v-if="page.toc !== undefined">
+              <!-- <tr v-if="page.toc !== undefined">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
@@ -170,7 +193,7 @@ useSeoMeta({
               </tr>
             </tbody>
           </table>
-        </section>
+        </section> -->
 
         <!-- ISI KONTEN BLOG (Markdown) -->
         <div class="grid grid-cols-6 gap-16">
@@ -192,7 +215,7 @@ useSeoMeta({
             <aside class="sticky top-8">
               <div class="font-semibold mb-2">Table of Content</div>
               <nav>
-                <TocLink :links="page.body.toc.links" />
+                <TocLink :links="page.body.toc.links" :active-id="activeId" />
               </nav>
             </aside>
           </div>

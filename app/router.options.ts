@@ -9,7 +9,7 @@ export default <RouterConfig>{
       return {
         el: to.hash,
         behavior: "smooth",
-        top: 100,
+        // top: -100, // Sesuaikan offset jika diperlukan
       };
     }
     return { left: 0, top: 0, behavior: "smooth" };
