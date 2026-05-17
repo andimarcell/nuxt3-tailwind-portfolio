@@ -12,7 +12,20 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ["@nuxtjs/color-mode", "@nuxt/content"],
+  modules: ["@nuxtjs/color-mode", "@nuxt/content", "@nuxtjs/seo"],
+  site: {
+    url: "http://localhost:3000",
+    name: "Portofolio Andi",
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/sitemap.xml",],
+    },
+  },
+  sitemap: {
+    enabled: true,
+  },
   colorMode: {
     classSuffix: "",
   },

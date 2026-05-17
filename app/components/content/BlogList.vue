@@ -40,7 +40,7 @@ const posts = computed(() => {
   <slot :posts="posts">
     <section class="not-prose font-mono">
       <div class="column text-gray-400 text-sm">
-        <div>date</div>
+        <div>year</div>
         <div>title</div>
       </div>
       <ul>
