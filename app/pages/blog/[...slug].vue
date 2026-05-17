@@ -203,7 +203,7 @@ useSeoMeta({
           <!-- Grid otomatis menyesuaikan -->
           <div
             :class="{
-              'col-span-4': page.body?.toc?.links?.length > 0,
+              'col-span-6 md:col-span-4': page.body?.toc?.links?.length > 0,
               'col-span-6': !page.body?.toc?.links?.length,
             }"
           >
@@ -212,7 +212,7 @@ useSeoMeta({
 
           <!-- TOC hanya muncul jika links ada DAN jumlahnya lebih dari 0 -->
           <div
-            class="col-span-2 not-prose"
+            class="md:col-span-2 not-prose hidden md:block"
             v-if="page.body?.toc?.links?.length > 0"
           >
             <aside class="sticky top-8">
