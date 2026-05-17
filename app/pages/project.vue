@@ -21,7 +21,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="max-w-4xl mx-auto px-4 py-12">
+  <main class="">
     <!-- Gunakan v-if="page" agar tidak error jika data belum selesai dimuat -->
     <article v-if="page" class="prose dark:prose-invert max-w-none">
         

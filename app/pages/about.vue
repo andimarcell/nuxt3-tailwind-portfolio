@@ -23,7 +23,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="max-w-4xl mx-auto px-4 py-12">
+  <main class="">
     <template v-if="page">
       <!-- HEADER: Judul Halaman dari Frontmatter -->
       <div class="mb-10 pb-8 border-b border-gray-200 dark:border-gray-700">
@@ -39,7 +39,7 @@ useSeoMeta({
 
       <!-- TABEL VISUALISASI FRONTMATTER  -->
       <!-- Menggunakan class 'not-prose' agar tidak bentrok dengan Tailwind Typography -->
-      <section
+      <!-- <section
         v-if="page.head"
         class="mb-12 overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm not-prose"
       >
@@ -117,7 +117,7 @@ useSeoMeta({
             </tr>
           </tbody>
         </table>
-      </section>
+      </section> -->
 
       <!-- KONTEN MARKDOWN (Menampilkan ## Me dan ## Skill) -->
       <!-- Menggunakan class 'prose' agar list bullet dan heading ter-style otomatis -->

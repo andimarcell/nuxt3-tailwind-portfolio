@@ -27,7 +27,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="max-w-4xl mx-auto px-4 py-12">
+  <main class="">
     <article
       class="prose dark:prose-invert max-w-none prose-pre:bg-gray-200 dark:prose-pre:bg-gray-800 prose-pre:text-gray-700 dark:prose-pre:text-gray-300"
     >

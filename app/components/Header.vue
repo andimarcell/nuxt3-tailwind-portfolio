@@ -25,6 +25,6 @@
 @reference "tailwindcss";
 
 .link {
-  @apply p-2 hover:bg-gray-400;
+  @apply p-2 hover:bg-gray-400 dark:hover:bg-gray-700;
 }
 </style>
