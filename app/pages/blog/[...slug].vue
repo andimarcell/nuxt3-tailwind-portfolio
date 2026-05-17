@@ -172,9 +172,21 @@ useSeoMeta({
           </table>
         </section>
 
-        <pre class="text-xs bg-gray-800 text-green-400 p-4 rounded">{{ page.body.toc.links }}</pre>
+        
         <!-- ISI KONTEN BLOG (Markdown) -->
-        <ContentRenderer :value="page" />
+         <div class="grid grid-cols-6 gap-16">
+          <div class="col-span-4">
+            <ContentRenderer :value="page" />
+          </div>
+          <div class="col-span-2 not-prose" v-if="page.body?.toc?.links">
+            <aside class="sticky top-8">
+              <div class="font-semibold mb-2">Table of Content</div>
+              <nav>
+                <TocLink :links="page.body.toc.links" />
+              </nav>
+            </aside>
+          </div>
+         </div>
 
         
       </template>
