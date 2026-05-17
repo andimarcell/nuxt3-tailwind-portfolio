@@ -10,19 +10,22 @@ useHead({
 const activeId = ref(null);
 
 onMounted(() => {
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        activeId.value = entry.target.id;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          activeId.value = entry.target.id;
+        }
       }
-    }
-  }, { threshold: 0.5 });
-    setTimeout(() => {
-    document.querySelectorAll('h2, h3').forEach(el => observer.observe(el));
+    },
+    { threshold: 0.5 },
+  );
+  setTimeout(() => {
+    document.querySelectorAll("h2, h3").forEach((el) => observer.observe(el));
   }, 500);
 
   // Cari semua h2 dan h3 di dalam artikel
-  const elements = document.querySelectorAll('h2, h3');
+  const elements = document.querySelectorAll("h2, h3");
   elements.forEach((el) => observer.observe(el));
 
   onBeforeUnmount(() => {
@@ -107,8 +110,8 @@ useSeoMeta({
             class="w-full text-sm text-left text-gray-700 dark:text-gray-300"
           >
             <tbody class="divide-y divide-gray-200 dark:divide-gray-800"> -->
-              <!-- Baris Title -->
-              <!-- <tr>
+        <!-- Baris Title -->
+        <!-- <tr>
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 w-32 border-r border-gray-200 dark:border-gray-800"
                 >
@@ -117,8 +120,8 @@ useSeoMeta({
                 <td class="px-6 py-4">{{ page.title }}</td>
               </tr> -->
 
-              <!-- Baris Description -->
-              <!-- <tr>
+        <!-- Baris Description -->
+        <!-- <tr>
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
@@ -127,8 +130,8 @@ useSeoMeta({
                 <td class="px-6 py-4">{{ page.description }}</td>
               </tr> -->
 
-              <!-- Baris Head (Nested Table) -->
-              <!-- <tr v-if="page.head && page.head.meta">
+        <!-- Baris Head (Nested Table) -->
+        <!-- <tr v-if="page.head && page.head.meta">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 align-top border-r border-gray-200 dark:border-gray-800"
                 >
@@ -172,8 +175,8 @@ useSeoMeta({
                 </td>
               </tr> -->
 
-              <!-- Baris PublishedAt (Format Raw) -->
-              <!-- <tr v-if="page.publishedAt">
+        <!-- Baris PublishedAt (Format Raw) -->
+        <!-- <tr v-if="page.publishedAt">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
@@ -182,8 +185,8 @@ useSeoMeta({
                 <td class="px-6 py-4">{{ page.publishedAt }}</td>
               </tr> -->
 
-              <!-- Baris TOC -->
-              <!-- <tr v-if="page.toc !== undefined">
+        <!-- Baris TOC -->
+        <!-- <tr v-if="page.toc !== undefined">
                 <th
                   class="px-6 py-4 font-semibold bg-gray-50 dark:bg-gray-950/50 border-r border-gray-200 dark:border-gray-800"
                 >
@@ -205,7 +208,6 @@ useSeoMeta({
             }"
           >
             <ContentRenderer :value="page" />
-            
           </div>
 
           <!-- TOC hanya muncul jika links ada DAN jumlahnya lebih dari 0 -->
@@ -225,18 +227,20 @@ useSeoMeta({
 
       <!-- ERROR STATE -->
       <div v-else class="text-center mt-20 not-prose">
-        <h1 class="text-6xl font-bold text-gray-900 dark:text-white mb-4">
-          404
-        </h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400">
-          Sepertinya tulisan yang kamu cari tidak ada di halaman ini.
-        </p>
-        <NuxtLink
-          to="/"
-          class="inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+        <ErrorDisplay
+          title="404"
+          description="Sepertinya tulisan yang kamu cari tidak ada di halaman ini."
+          :show-button="false"
         >
-          Kembali ke Beranda
-        </NuxtLink>
+          <template #action>
+            <NuxtLink
+              to="/blog"
+              class="inline-block mt-6 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Kembali ke Blog
+            </NuxtLink>
+          </template>
+        </ErrorDisplay>
       </div>
     </article>
   </main>
