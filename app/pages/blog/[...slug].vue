@@ -172,13 +172,23 @@ useSeoMeta({
           </table>
         </section>
 
-        
         <!-- ISI KONTEN BLOG (Markdown) -->
-         <div class="grid grid-cols-6 gap-16">
-          <div class="col-span-4">
+        <div class="grid grid-cols-6 gap-16">
+          <!-- Grid otomatis menyesuaikan -->
+          <div
+            :class="{
+              'col-span-4': page.body?.toc?.links?.length > 0,
+              'col-span-6': !page.body?.toc?.links?.length,
+            }"
+          >
             <ContentRenderer :value="page" />
           </div>
-          <div class="col-span-2 not-prose" v-if="page.body?.toc?.links">
+
+          <!-- TOC hanya muncul jika links ada DAN jumlahnya lebih dari 0 -->
+          <div
+            class="col-span-2 not-prose"
+            v-if="page.body?.toc?.links?.length > 0"
+          >
             <aside class="sticky top-8">
               <div class="font-semibold mb-2">Table of Content</div>
               <nav>
@@ -186,9 +196,7 @@ useSeoMeta({
               </nav>
             </aside>
           </div>
-         </div>
-
-        
+        </div>
       </template>
 
       <!-- ERROR STATE -->

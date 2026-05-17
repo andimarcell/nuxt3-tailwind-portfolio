@@ -1,6 +1,7 @@
 ---
 title: 'Blog'
 description: 'Welcome to my blog where I share insights, tutorials, and updates on web development and programming.'
+
 ---
 
 # Welcome to My Blog
